@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Todo App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+
+
+    <nav class="navbar bg-primary p-3">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1 text-center">Todo App  </span>
+      </div>
+    </nav>
+
+
+      <div>
+        <form action="/add/todo" method="post" class="d-felx">
+          <div class="input-group mb-3 w-50 mx-auto p-2 mt-5 align-middle  ">
+            <input type="text" name="todo" class="form-control" placeholder=" Enter todo" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-primary" value="Add Todo"  type="submit" id="button-addon2">Add Todo</button>
+          </div>
+        </form>
+      </div>
+
+
+
+      <!-- <ul class="list-group w-50 my-5 mx-auto p-2">
+       
+        <li class="list-group-item"><a href="/delete/todo/"
+          class="btn btn-danger btn-sm">Delete</a></li>
+        
+      </ul> -->
+
+      
+      <ul class="list-group w-50 my-5 mx-auto p-2">
+        <% todo.forEach(todos => { %>
+        <li class="list-group-item"><%= todos.todo %> <a href="/delete/todo/<%= todos._id %>"
+                class="btn btn-danger btn-sm float-end">Delete</a></li>
+
+        <% }) %>
+
+    </ul>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
